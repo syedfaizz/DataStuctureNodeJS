@@ -1,0 +1,21 @@
+let random=new Array();
+let n=10;
+for( i=0 ; i <n; i++)
+{
+    let randomNumber =( Math.floor(Math.random() * 1000) % 999) ;
+    random.push(randomNumber);
+}
+for(i=0;i<n-1;i++)
+{
+    for(j=0;j<n-i-1;j++)
+    {
+        if(random[j]>random[j+1])
+        {
+            temp=random[j];
+            random[j]=random[j+1];
+            random[j+1]=temp;
+        }
+    }
+}
+console.log("\nArray Elements Are : "+random+"\nSecond Largest Number Is : "+random[n-2] +
+            "\nSecond Smallest Element is : "+random[1]);
